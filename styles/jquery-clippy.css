@@ -1,0 +1,67 @@
+#clippy-container {
+    position: absolute;
+    display: none;
+    cursor: grab;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#clippy-bubble {
+    background-color: #FDFFCB;
+    display: inline-block;
+    margin: 5px;
+    border: solid 1px #636057;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: Tahoma,Verdana,Segoe,sans-serif;
+    font-size: 13px;
+    min-height: 40px;
+    vertical-align: top;
+    position: relative;
+    display: none;
+    color: #292929;
+    max-width: 300px;
+}
+
+#clippy-itself {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#clippy-bubble-triangle {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #FDFFCB;
+    left: -10px;
+    position: absolute;
+    top: 10px;
+}
+
+#clippy-bubble-triangle-border {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #636057;
+    left: -11px;
+    position: absolute;
+    top: 10px;
+}
+.clippy-option {
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 2px;
+    background-image: url(../images/OptionStarter.png);
+    background-repeat: no-repeat;
+    padding-left: 15px;
+    background-position-y: 5px;
+    margin-top: 5px;
+}
+.clippy-option:hover {
+    text-decoration: underline;
+}

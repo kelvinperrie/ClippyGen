@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-nz">
+<head>
+    <title>clippy test</title>
+    <link rel="stylesheet" type="text/css" href="styles/jquery-clippy.css">
+</head>
+<body>
+    <div id="example">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec leo neque, viverra et dictum eu, pellentesque ut elit. In venenatis odio et mi consequat, maximus varius lorem malesuada. Vestibulum sit amet magna a metus pretium vehicula vitae vel dolor. Aenean ac tristique purus, non tincidunt velit. Proin ac cursus dui, ac dictum lorem. Nulla sed interdum augue. Phasellus quis purus eu nisl fringilla pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quis mi enim. Sed sagittis condimentum erat, nec tristique nibh auctor ac. Mauris posuere lorem sed bibendum dignissim. Aliquam erat volutpat. Phasellus velit ipsum, malesuada et est in, elementum accumsan mauris. Pellentesque eu ullamcorper leo.
+        <br /><br />
+        Phasellus ac libero quis turpis ultrices luctus elementum pulvinar arcu. Pellentesque pretium est eget urna faucibus, a lacinia ligula volutpat. Nam consectetur vehicula felis non condimentum. Cras pharetra enim vitae fringilla scelerisque. Curabitur gravida tincidunt nisl commodo rutrum. Morbi pellentesque nisi vestibulum magna egestas, id cursus augue faucibus. Vestibulum aliquet risus ac mattis blandit. In luctus turpis sapien, sed commodo leo pharetra in.
+        <br /><br />
+        Sed lacus est, varius in nibh eget, laoreet pellentesque lectus. Aliquam aliquet ipsum sed odio posuere fermentum. Aenean tristique ac urna et vestibulum. Etiam mi ipsum, fringilla in nibh at, scelerisque pulvinar mauris. Aliquam semper sollicitudin est, nec faucibus tellus dapibus et. In ut ligula ac nunc rhoncus finibus et vitae urna. In hac habitasse platea dictumst. Aliquam eget hendrerit turpis. Cras rutrum ex purus, vel dictum lacus posuere ut. Donec non lacinia nisi, commodo ultricies erat. Donec ut magna eu dolor volutpat auctor. Fusce rhoncus sapien ut augue sagittis, eget gravida sem accumsan. Morbi lectus magna, ornare sed neque ac, iaculis ultricies diam.
+    </div>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <script src="scripts/jquery-clippy.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { 
+            $("#example").makeClippy();
+
+            var responseToClickGrumpy = function () {
+                clippy.say("CAN'T YOU SEE I'M BUSY, WHAT DO YOU WANT NOW!", [{ text: "Jeez, nothing, sorry, bye!", action: function () { clippy.closeBubble(); } }])
+            };
+            
+            var respondToBad = function () {
+                clippy.say("I'm not hanging around to listen to that!");
+                setTimeout(function () { clippy.hide(); }, 3000);
+            }
+
+            var respondToGood = function () {
+                clippy.say("I'm glad to hear that. Good chat. Thanks for stopping by.", [{ text: "Laters!", action: function () { clippy.closeBubble(); clippy.onClick(responseToClickGrumpy); } }])
+            }
+
+            var doGreeting = function () {
+                clippy.say("Hello there, how are you today?", [{ text: "I'm great thanks", action: respondToGood }, { text: "I'm terrible, woe is me", action: respondToBad }])
+            }
+
+            // put clippy on screen
+            clippy.show();
+            // after a bit of wait, make him talk
+            setTimeout(function () { doGreeting(); }, 2000);
+        });
+    </script>
+</body>
+</html>
