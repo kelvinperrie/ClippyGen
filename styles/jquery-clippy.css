@@ -24,6 +24,7 @@
     display: none;
     color: #292929;
     max-width: 300px;
+    text-align: left;
 }
 
 #clippy-itself {
@@ -61,6 +62,7 @@
     padding-left: 15px;
     background-position-y: 5px;
     margin-top: 5px;
+    text-align: left;
 }
 .clippy-option:hover {
     text-decoration: underline;
