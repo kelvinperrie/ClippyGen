@@ -37,7 +37,8 @@
             }
 
             // put clippy on screen
-            clippy.show();
+            
+            setTimeout(function () { clippy.show({ left: '100px', top: '100px' }); }, 1000);
             // after a bit of wait, make him talk
             setTimeout(function () { doGreeting(); }, 2000);
         });
